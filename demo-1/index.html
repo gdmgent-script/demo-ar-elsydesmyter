@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo 2 - AR</title>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <!-- link op canvas (A frame AR url)-->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+<body>
+    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3_PARITY65;'>
+        <a-marker preset="hiro">
+            <a-image 
+            src="bacteria.jpg"
+            position="0 0 0"
+            rotation="60 0 0"
+            width="1"
+            height="1"
+            ></a-image>
+        </a-marker>
+        <a-entity camera ></a-entity>
+
+        <a-marker preset="kanji">
+            <a-video 
+            src="bunny.mp4"
+            position="0 0 0"
+            rotation="60 0 0"
+            width="1"
+            height="1"
+            ></a-video>
+        </a-marker>
+        <a-entity camera ></a-entity>
+
+        <a-gltf-model
+        src="assets/beer-can/._scene.gltf"
+        psition="0 0 0"
+        rotation="0 0 0"
+        scale="3 3 3"
+        smooth="true"
+        smoothcount="10"
+        ></a-gltf-model>
+
+        <a-marker
+        type="barcode" value="1"> </a-marker>
+        <a-entity
+        glft-model="assets/beer-can/._scene.gltf"
+        scale="0 0 0"
+        smoothcount="10"
+        smoothtolerance="0.01"
+        smooththreshold="5"
+        ></a-entity>
+      
+
+        </a-marker>
+
+    </a-scene>
+</body>
+</html>
